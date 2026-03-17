@@ -1,0 +1,46 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: {{- secret "get" "kube.prod.certificate"
+    server: https://F80D2B1E30F6EDDC5D8DDDAF9B97E1EB.yl4.eu-west-1.eks.amazonaws.com
+  name: prod
+- cluster:
+    certificate-authority-data: {{- secret "get" "kube.noprod.certificate" }}
+    server: https://CA3703FD8C6D005D493D899B0DD65508.gr7.eu-west-1.eks.amazonaws.com
+  name: noprod
+contexts:
+- context:
+    cluster: prod
+    user: prod
+  name: prod
+- context:
+    cluster: noprod
+    user: noprod
+  name: noprod
+current-context: noprod
+kind: Config
+preferences: {}
+users:
+- name: prod
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - token
+      - --region
+      - eu-west-1
+      - --cluster-id
+      - prod
+      command: aws-iam-authenticator
+- name: noprod
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - token
+      - --region
+      - eu-west-1
+      - --cluster-id
+      - noprod
+      command: aws-iam-authenticator
+
