@@ -1,0 +1,10 @@
+<?xml version="1.0">
+<ivysettings>
+    <settings defaultResolver="maven" />
+    <resolvers>
+        <chain name="maven" returnFirst="true">
+            <ibiblio name="restlet" m2compatible="true"
+                     root="https://collab.mow.vlaanderen.be/artifacts/repository/maven-public/" />
+        </chain>
+    </resolvers>
+</ivysettings>
