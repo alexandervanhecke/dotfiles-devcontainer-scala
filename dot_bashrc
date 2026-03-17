@@ -1,7 +1,0 @@
-# Run chezmoi apply on first interactive login after container build
-if [ ! -f ~/.local/share/chezmoi/.git/config ] && command -v rbw &>/dev/null; then
-  echo "=== First login: applying dotfiles ==="
-  echo "Please unlock your Bitwarden vault:"
-  rbw unlock
-  chezmoi init --apply https://github.com/alexandervanhecke/dotfiles-devcontainer-scala
-fi
