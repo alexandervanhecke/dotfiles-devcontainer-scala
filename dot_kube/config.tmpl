@@ -1,7 +1,7 @@
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority-data: {{- secret "get" "kube.prod.certificate"
+    certificate-authority-data: {{- secret "get" "kube.prod.certificate" }}
     server: https://F80D2B1E30F6EDDC5D8DDDAF9B97E1EB.yl4.eu-west-1.eks.amazonaws.com
   name: prod
 - cluster:
