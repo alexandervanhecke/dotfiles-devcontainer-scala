@@ -1,0 +1,14 @@
+[
+  {
+    "url": "postgres://thor:thor@localhost:5432/thor",
+    "name": "thor - docker"
+  },
+  {
+    "url": "postgres://thor:thor@localhost:5432/thor-test",
+    "name": "thor-test - docker"
+  },
+  {
+    "url": "postgres://thora:{{- secret "get" "postgres.thor.dev" -}}@localhost:5444/thor",
+    "name": "thor - DEV"
+  }
+]
