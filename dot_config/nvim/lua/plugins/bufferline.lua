@@ -1,11 +1,10 @@
 return {
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-        sort_by = "insert_at_end",
-      },
+  "akinsho/bufferline.nvim",
+  opts = {
+    options = {
+      sort_by = function(a, b)
+        return a.id < b.id
+      end,
     },
   },
 }
-
