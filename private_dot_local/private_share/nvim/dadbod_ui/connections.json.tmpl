@@ -10,5 +10,13 @@
   {
     "url": "postgres://thora:{{- secret "get" "postgres.thor.dev" -}}@localhost:5444/thor",
     "name": "thor - DEV"
+  },
+  {
+    "url": "postgres://uitzonderlijkvervoer:uitzonderlijkvervoer@localhost:5432/uitzonderlijkvervoer",
+    "name": "uitzonderlijk vervoer - docker"
+  },
+  {
+    "url": "postgres://uitzonderlijkvervoera:{{- secret "get" "postgres.uitzonderlijkvervoer.dev" -}}@localhost:5444/uitzonderlijkvervoer",
+    "name": "uitzonderlijk vervoer - DEV"
   }
 ]
