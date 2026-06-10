@@ -45,8 +45,8 @@
     <servers>
         <server>
             <id>awv-central</id>
-            <username>saaaa795</username>
-	    <password>{cxw8KTsU5zEHKu19MtyzAWUzKBBXwvsTE2DYWxvN7C7VC9/mIfIrH06FmeUaeU9dkyopBA4Hfc8p+Gx21Dmy3Q==}</password>
+            <username>{{- (secretJSON "get" "--raw" "nexus.user.token").data.username }}</username>
+	    <password>{{- (secretJSON "get" "--raw" "nexus.user.token").data.password }}</password>
         </server>
     </servers>
 </settings>
